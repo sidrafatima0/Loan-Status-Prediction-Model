@@ -10,6 +10,7 @@ def main():
     st.title("Loan Status Prediction")
     st.write("Enter details to predict loan approval status")
     
+
     # User input fields
     gender = st.selectbox("Gender", [1, 0], format_func=lambda x: "Male" if x == 1 else "Female")
     married = st.selectbox("Married", [1, 0], format_func=lambda x: "Yes" if x == 1 else "No")
@@ -22,6 +23,8 @@ def main():
     loan_term = st.number_input("Loan Amount Term (in days)", min_value=0.0, step=1.0)
     credit_history = st.selectbox("Credit History", [1, 0], format_func=lambda x: "Good" if x == 1 else "Bad")
     property_area = st.selectbox("Property Area", [0, 1, 2], format_func=lambda x: ["Rural", "Semiurban", "Urban"][x])
+    
+
     
     if st.button("Predict"):
         input_data = pd.DataFrame({
